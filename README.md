@@ -21,11 +21,11 @@ Time of execution: 4ms
 
 ## Methods
 In this experiment three different methods from naive to advanced were implemented. 
-###naive method:
+### naive method:
 This method used basic looping over words and checking if the search term is in the word.
-###regex method:
+### regex method:
 This method is using regex to speed up the process. By using a regex matcher the function searches the whole document for the keyword instead of going through each term.
-###SQL method
+### SQL method
 To test a more advanced technique I setup a postgreSQL database in a virtual machine and stored the text in a table. 
 The only preprocessing done was basic text indexing like so:
 ```sql
