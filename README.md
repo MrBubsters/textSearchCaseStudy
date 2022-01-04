@@ -37,6 +37,7 @@ create index text_idx on public.text_documents using gin (indexed_text)
 I tested the indexed text by running the regex command against the ts_query on the index:
 ```sql
 explain analyze select regexp_matches(sample_text, 'Roman', 'g') from public.text_documents td
+---
 Planning Time: 0.239 ms
 Execution Time: 0.459 ms
 ```
@@ -44,6 +45,7 @@ Execution Time: 0.459 ms
 ```sql
 explain analyze select * from public.text_documents td 
 where indexed_text @@ to_tsquery('Roman')
+---
 Planning Time: 0.494 ms
 Execution Time: 0.172 ms
 ```
